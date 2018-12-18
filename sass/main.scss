@@ -1,0 +1,38 @@
+@import "variables";
+@import "global";
+
+
+
+.section {
+	padding: 10px;
+	background: #ddd;
+
+	&--home {
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+	}
+}
+
+
+// box center da home
+.box-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&--image {
+		margin: 0;
+		max-width: 275px;
+		img {
+			max-width: 100%;
+		}
+	}
+
+	&--content {
+		max-width: 500px;
+	}
+}
+
+
+
+

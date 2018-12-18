@@ -1,0 +1,27 @@
+* {
+  margin: 0; }
+
+*, *::before, *::after {
+  box-sizing: border-box; }
+
+.section {
+  padding: 10px;
+  background: #ddd; }
+  .section--home {
+    height: 100vh;
+    display: flex;
+    justify-content: center; }
+
+.box-center {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .box-center--image {
+    margin: 0;
+    max-width: 275px; }
+    .box-center--image img {
+      max-width: 100%; }
+  .box-center--content {
+    max-width: 500px; }
+
+/*# sourceMappingURL=main.css.map */
