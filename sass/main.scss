@@ -8,7 +8,7 @@
 	background: #ddd;
 
 	&--home {
-		height: 100vh;
+		min-height: 100vh;
 		display: flex;
 		justify-content: center;
 	}
@@ -28,7 +28,6 @@
 			border-radius: 18%;
 		}
 	}
-
 	&--content {
 		padding: 1rem;
 		max-width: 500px;
@@ -42,7 +41,11 @@
 		font-family: 'poiret';
 	}
 }
-
+@media (max-width: 575px) {
+	.box-center {
+		flex-direction: column;
+	}	
+}
 
 
 

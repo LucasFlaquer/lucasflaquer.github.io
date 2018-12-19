@@ -19,7 +19,7 @@
   padding: 10px;
   background: #ddd; }
   .section--home {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center; }
 
@@ -42,5 +42,9 @@
   .box-center--title {
     font-size: 2em;
     font-family: 'poiret'; }
+
+@media (max-width: 575px) {
+  .box-center {
+    flex-direction: column; } }
 
 /*# sourceMappingURL=main.css.map */
