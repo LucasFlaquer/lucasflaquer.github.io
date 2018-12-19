@@ -1,6 +1,6 @@
 @import "variables";
+@import "fonts";
 @import "global";
-
 
 
 .section {
@@ -25,11 +25,21 @@
 		max-width: 275px;
 		img {
 			max-width: 100%;
+			border-radius: 18%;
 		}
 	}
 
 	&--content {
+		padding: 1rem;
 		max-width: 500px;
+		font-family: 'Bogaloo';
+		p {
+			font-size: 1.5em;
+		}
+	}
+	&--title {
+		font-size: 2em;
+		font-family: 'poiret';
 	}
 }
 
