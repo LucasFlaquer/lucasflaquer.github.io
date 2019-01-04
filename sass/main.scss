@@ -2,7 +2,9 @@
 @import "fonts";
 @import "global";
 
-
+*, *:before, *:after {
+	box-sizing: border-box;
+}
 .section {
 	padding: 10px;
 	background: #ddd;
