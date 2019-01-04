@@ -21,7 +21,12 @@
   .section--home {
     min-height: 100vh;
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+    position: relative;
+    background-image: url("../img/code-img.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; }
 
 .box-center {
   display: flex;
