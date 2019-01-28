@@ -6,7 +6,7 @@
 	box-sizing: border-box;
 }
 .section {
-	padding: 10px;
+	padding: 20px;
 	background: #ddd;
 	transition: all .8s ease-in-out;
 	&--home {
@@ -31,7 +31,12 @@
 	}
 	&--skills {
 		background-color: #ed4;
-		padding: 20px;
+		
+	}
+	&--title {
+		font-family: 'Bogaloo';
+		font-size: 50px;
+		font-weight: bold;
 	}
 }
 

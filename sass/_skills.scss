@@ -1,5 +1,13 @@
 .skills {
 	padding: 20px;
+
+	&--title {
+		font-family: 'Poiret';
+		font-size: 40px;
+		border-bottom: 1px solid;
+		padding-bottom: 5px;
+		margin-bottom: 10px;
+	}
 	&--list {
 		list-style: none;
 		// padding-left: 0;
