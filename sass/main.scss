@@ -1,7 +1,7 @@
 @import "variables";
 @import "fonts";
 @import "global";
-
+@import "skills";
 *, *:before, *:after {
 	box-sizing: border-box;
 }
@@ -28,6 +28,10 @@
 	 //  background-position: center;
 	 //  background-size: cover;
 	 //  background-attachment: fixed;
+	}
+	&--skills {
+		background-color: #ed4;
+		padding: 20px;
 	}
 }
 
