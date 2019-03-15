@@ -1,0 +1,115 @@
+.header {
+	position: fixed;
+	z-index: 10;
+	top: -80px;
+	width: 100%;
+	transition: top 0.3s;
+	&.show {
+		top: 0;
+	}
+}
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  position: relative;
+  background-color: #5c6564;
+
+  &--title {
+		font-size: 1.6rem;
+		font-weight: bold;
+		color:  #FFf;
+	  flex-grow:1;
+	  padding-bottom: 10px;
+	}
+	&--list {
+		overflow: hidden;
+		margin:  0;
+		list-style: none;
+		padding-left: 0;
+		max-height: 0;
+		width: 100%;
+		-webkit-transition: max-height .30s ease-in-out;
+		   -moz-transition: max-height .30s ease-in-out;
+		    -ms-transition: max-height .30s ease-in-out;
+		     -o-transition: max-height .30s ease-in-out;
+		        transition: max-height .30s ease-in-out;
+		&.colapsed {
+			display: block;
+			width: 100%;
+			max-height: 20em;
+		}
+	}
+	&--item {
+	 	a {
+			color: #fff;
+			text-decoration: none;
+			font-weight: 600;
+		}
+	}
+	&--hamburger {
+		min-width: 30px;
+		min-height: 30px;
+
+		span {
+			display: block;
+			height: 5px;
+			width: 30px;
+			background-color: #fff;
+			margin-bottom: 5px;
+			border-radius: 7px;
+			-webkit-transition: all .2s ease-in-out;
+			   -moz-transition: all .2s ease-in-out;
+			    -ms-transition: all .2s ease-in-out;
+			     -o-transition: all .2s ease-in-out;
+			        transition: all .2s ease-in-out;
+		}
+		&.active {
+			position: relative;
+
+			span {
+				display: none;
+				position: absolute;
+			  top: 25%;
+			  right: 0;
+				
+				&:first-child {
+					display: block;
+					-webkit-transform: rotate(45deg);
+					   -moz-transform: rotate(45deg);
+					    -ms-transform: rotate(45deg);
+					     -o-transform: rotate(45deg);
+					        transform: rotate(45deg);
+				}
+				&:last-child {
+					display: block;
+					-webkit-transform: rotate(-45deg);
+					   -moz-transform: rotate(-45deg);
+					    -ms-transform: rotate(-45deg);
+					     -o-transform: rotate(-45deg);
+					        transform: rotate(-45deg);
+				}
+			}
+		}
+	}
+}
+.hide {
+	display: none;
+}
+
+
+@media (min-width: 768px) {
+	.nav-menu--list {
+		max-height: inherit;
+		display: flex;
+		width: auto;
+	}
+	.nav-menu--item {
+		margin:  0 1em;
+	}
+	.nav-menu--hamburger {
+		display: none;
+	}
+}

@@ -1,0 +1,15 @@
+@import "setup";
+@import "node_modules/animate.css/animate.min";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/font-awesome/scss/font-awesome";
+@import "variables";
+@import "fonts";
+@import "global";
+
+@import "project/organisms/org-header";
+
+
+@import "project/molecules/skills";
+@import "project/molecules/projects";
+
+
