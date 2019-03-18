@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
   collapseMenu();
   calcProgress();
   fadeProject();
+  btnVermais();
 });
 window.onscroll = function() {scrollFunction()};
 
@@ -48,7 +49,7 @@ function addItem(obj, list) {
 		name.style.width = obj[i].porcentagem+ "%";
 		text = document.createTextNode(obj[i].name);
 		name.appendChild(text);
-		progress.appendChild(name); 
+		progress.appendChild(name);
 		li.appendChild(progress);
 		list.appendChild(li);
 	}
@@ -60,11 +61,18 @@ function clearList(list) {
 
 
 function fadeProject() {
-	$( ".projects--item" ).on( "mouseenter", function() {
-			$(this).find('.projects--desc').addClass('zoomIn')
-			.removeClass('hide rotateOut');    	
+	$(".projects--box").on("mouseenter", function() {
+			$(this).find('.projects--content').addClass('zoomIn')
+			.removeClass('hidden zoomOut');    	
 	  })
-	  .on( "mouseleave", function() {
-	   $('.projects--desc').addClass('rotateOut').removeClass('zoomIn');
+	  .on("mouseleave", function() {
+	   $('.projects--content').addClass('zoomOut').removeClass('zoomIn');
 	});
-} 
+}
+
+function btnVermais() {
+	if(window.innerWidth < 768) {
+
+		$('.projects--content').addClass('active').removeClass('hidden');
+	}
+}
