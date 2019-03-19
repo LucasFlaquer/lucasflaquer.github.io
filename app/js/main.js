@@ -3,7 +3,9 @@ document.addEventListener("DOMContentLoaded", function() {
   calcProgress();
   fadeProject();
   btnVermais();
+  offsetHeight();
 });
+
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -75,4 +77,14 @@ function btnVermais() {
 
 		$('.projects--content').addClass('active').removeClass('hidden');
 	}
+}
+function offsetHeight() {
+	$('.nav-menu--item>a').click(function(e) {
+		console.log(this);
+		var href = $(this).attr('href');
+		// e.preventDefault();
+		// console.log('href');
+		$("body, html").animate({ 
+    scrollTop: $(href).offset().top - 68}, 200);
+	})
 }

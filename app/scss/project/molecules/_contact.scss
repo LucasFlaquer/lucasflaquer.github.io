@@ -1,0 +1,11 @@
+.contact {
+	background-color:#ddd;
+	&--list {
+		list-style: none;
+	}
+	&--resume {
+		margin-top: 20px;
+		display: flex;
+		justify-content: center;
+	}
+}

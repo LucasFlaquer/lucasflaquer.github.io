@@ -1,15 +1,16 @@
 .projects {
 	&--list {
+		list-style: none;
+		padding-left: 0;
 		display: flex;
-		flex-wrap:wrap;
-		justify-content: center;
+		justify-content: flex-start;
 	}
 	&--item {
 		display: flex;
 		justify-content: center;
 	}
 	&--box {
-		border-radius: 10px;
+		border-radius: 4px;
 		background-image: url(../samples/download.png);
     background-position: 50%;
     display: block;
@@ -54,6 +55,25 @@
 			background: $dark-yellow;
 			color: $black;
 			text-decoration: none;
+		}
+	}
+	&--more {
+		.fa {
+			font-size: 2rem;
+			margin-right: 10px;
+			color: $black;
+	    padding: 3px;
+	    border: 2px solid transparent;
+	    // border-radius: 19px;
+	    -webkit-transition: all .25s ease;
+	       -moz-transition: all .25s ease;
+	        -ms-transition: all .25s ease;
+	         -o-transition: all .25s ease;
+	            transition: all .25s ease;
+			&:hover {
+				text-decoration: none;
+				border: 2px solid $black;
+			}
 		}
 	}
 }
