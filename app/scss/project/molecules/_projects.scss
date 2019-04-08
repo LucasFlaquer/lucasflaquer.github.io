@@ -11,8 +11,8 @@
 	}
 	&--box {
 		border-radius: 4px;
-		background-image: url(../samples/download.png);
     background-position: 50%;
+    background-image: url(../samples/download.png);
     display: block;
     padding: 15px;
     margin-bottom: 1em;
@@ -22,6 +22,9 @@
 			text-decoration: none;
 			color:#000;
 		}
+		&__freshness {
+			background-image: url(../samples/freshness.jpg);
+		}
 	}
 	&--content {
 		position: relative;
@@ -30,7 +33,7 @@
 		padding:20px;
 		border-radius: 10px;
 		animation-duration: 800ms;
-		
+		min-height: 250px;
 		&.hidden {
 			visibility: hidden;
 		}

@@ -63,19 +63,20 @@ function clearList(list) {
 
 
 function fadeProject() {
-	$(".projects--box").on("mouseenter", function() {
+	if (window.innerWidth > 768) {
+		$(".projects--box").on("mouseenter", function() {
 			$(this).find('.projects--content').addClass('zoomIn')
 			.removeClass('hidden zoomOut');    	
 	  })
 	  .on("mouseleave", function() {
 	   $('.projects--content').addClass('zoomOut').removeClass('zoomIn');
-	});
+		});	
+	}
 }
 
 function btnVermais() {
 	if(window.innerWidth < 768) {
-
-		$('.projects--content').addClass('active').removeClass('hidden');
+		$('.projects--content').addClass('active').removeClass('hidden animated');
 	}
 }
 function offsetHeight() {
