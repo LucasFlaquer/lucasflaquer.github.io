@@ -1,0 +1,66 @@
+.footer {
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-start;
+	padding-top: 30px;
+	background-color: lighten($black, 10);
+	color: $gray;
+	&--title {
+		font-size: 24px;
+		margin-bottom: 10px;
+	}
+	&--subtitle {
+		font-size: 18px;
+	}
+	&--list {
+		list-style: circle;
+		padding-left: 20px;
+	}
+	&--item {
+		a {
+			color: $gray;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+	&--repositories {
+		padding-left:0;
+		list-style: none;
+		li {
+			display: inline-block;
+			a {
+				min-width: 30px;
+			text-align: center;
+			}
+		}
+		.fa {
+			font-size: 2rem;
+			margin-right: 10px;
+			color: $gray;
+	    padding: 3px;
+	    border: 2px solid transparent;
+	    // border-radius: 19px;
+	    -webkit-transition: all .25s ease;
+	       -moz-transition: all .25s ease;
+	        -ms-transition: all .25s ease;
+	         -o-transition: all .25s ease;
+	            transition: all .25s ease;
+			&:hover {
+				text-decoration: none;
+				border: 2px solid $gray;
+			}
+		}
+	}
+	&--resume {
+		display: inline-block;
+
+		&:hover {
+			font-size: 1rem;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	
+}
