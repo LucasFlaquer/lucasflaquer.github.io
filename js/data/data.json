@@ -1,0 +1,69 @@
+{
+	"languages":[
+		{
+			"name": "HTML5",
+			"porcentage": "80"
+		},
+		{
+			"name": "CSS3",
+			"porcentagem": "80"
+		},
+		{
+			"name": "Javascript",
+			"porcentagem": "40"
+		},
+		{
+			"name": "Sass / SCSS",
+			"porcentagem": "69"
+		},
+		{
+			"name": "Python",
+			"porcentagem": "66"
+		}
+	],
+	"tools": [
+		{
+			"name": "trello",
+			"porcentagem": "55"
+		},
+		{
+			"name":"Node / npm",
+			"porcentagem": "40"
+		},
+		{
+			"name": "gulp",
+			"porcentagem": "80"
+		},
+		{
+			"name": "Git / github",
+			"porcentagem": "40"
+		},
+		{
+			"name": "Photoshop / XD",
+			"porcentagem": "30"
+		},
+		{
+			"name": "Google Fonts",
+			"porcentagem": "45"
+		}
+	],
+	"libs":[
+		{
+			"name": "Bootstrap",
+			"porcentagem": "70"
+		},
+		{
+			"name": "JQuery",
+			"porcentagem": "50"
+		},
+		{
+			"name": "Django",
+			"porcentagem": "40"
+		},
+		{
+			"name": "Vue.js",
+			"porcentagem": "15"
+		}
+	]
+	
+}
