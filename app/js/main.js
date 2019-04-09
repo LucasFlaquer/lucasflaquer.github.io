@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
   fadeProject();
   btnVermais();
   offsetHeight();
-});
+}); 
 
 window.onscroll = function() {scrollFunction()};
 
