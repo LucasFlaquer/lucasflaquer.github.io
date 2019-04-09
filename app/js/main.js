@@ -80,12 +80,12 @@ function btnVermais() {
 	}
 }
 function offsetHeight() {
-	$('.nav-menu--item>a').click(function(e) {
+	$('.nav-menu--item>a, .footer--item>a').click(function(e) {
 		console.log(this);
 		var href = $(this).attr('href');
-		// e.preventDefault();
+		e.preventDefault();
 		// console.log('href');
 		$("body, html").animate({ 
-    scrollTop: $(href).offset().top - 68}, 200);
+    scrollTop: $(href).offset().top - 48}, 200);
 	})
 }
