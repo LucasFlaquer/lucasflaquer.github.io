@@ -34,8 +34,8 @@
 		&__gulp {
 			background-image: url(../samples/gulp.jpg);
 		}
-		&__gulp {
-			background-image: url(../samples/gulp.jpg);
+		&__niver {
+			background-image: url(../samples/niver-let.png);
 		}
 		&__gulp {
 			background-image: url(../samples/gulp.jpg);
@@ -43,8 +43,8 @@
 	}
 	&--content {
 		position: relative;
-		color: #fff;
-		background: rgba(19, 18, 18, 0.65);
+		color: $white	;
+		background: rgba(19, 18, 18, .9);
 		padding:20px;
 		border-radius: 10px;
 		animation-duration: 800ms;
