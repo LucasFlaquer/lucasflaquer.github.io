@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
   fadeProject();
   btnVermais();
   offsetHeight();
-});
+}); 
 
 window.onscroll = function() {scrollFunction()};
 
@@ -83,8 +83,7 @@ function offsetHeight() {
 	$('.nav-menu--item>a, .footer--item>a').click(function(e) {
 		console.log(this);
 		var href = $(this).attr('href');
-		e.preventDefault();
-		// console.log('href');
+		// e.preventDefault();
 		$("body, html").animate({ 
     scrollTop: $(href).offset().top - 48}, 200);
 	})
