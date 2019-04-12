@@ -17,12 +17,22 @@ function scrollFunction() {
   }
 }
 function collapseMenu() {
-	let hamburger = document.querySelector('.nav-menu--hamburger');
-	let menuItem = document.querySelector('.nav-menu--list');
-	hamburger.addEventListener("click",function() {
-		hamburger.classList.toggle("active");
-		menuItem.classList.toggle("colapsed");
-	});
+	if (window.innerWidth < 767) {
+		let hamburger = document.querySelector('.nav-menu--hamburger');
+		let menuItem = document.querySelector('.nav-menu--list');
+		let menuList = document.querySelectorAll('.nav-menu--list li');
+		hamburger.addEventListener("click",function() {
+			hamburger.classList.toggle("active");
+			menuItem.classList.toggle("colapsed");
+		});
+		//close menu on click
+		menuList.forEach( function(element, index) {
+			element.addEventListener("click", function() {
+				hamburger.classList.toggle("active");
+				menuItem.classList.toggle("colapsed");
+			})
+		});
+	}
 }
 function calcProgress() {
 	$.getJSON('./js/data/data.json', function(json, textStatus) {
