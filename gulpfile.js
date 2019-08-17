@@ -102,7 +102,7 @@ function browsersync() {
     server: {
       baseDir: path.dist.root,
     },
-    port: 8080,
+    port: 8081,
     startPath: 'index.html',
   })
 }
