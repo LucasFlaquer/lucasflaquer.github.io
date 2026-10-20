@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-20T18:00:00Z",
+  "title": "Design System: Lucas Flaquer",
+  "extensions": {
+    "colorMeta": {
+      "charcoal-sign": { "role": "primary", "displayName": "Charcoal Sign", "canonical": "#1d1d1b", "cssVar": "--sign", "tonalRamp": ["oklch(15% 0.004 107)", "oklch(23% 0.004 107)", "oklch(35% 0.004 107)", "oklch(48% 0.004 107)", "oklch(60% 0.004 107)", "oklch(72% 0.004 107)", "oklch(84% 0.004 107)", "oklch(95% 0.004 107)"] },
+      "line-blue": { "role": "secondary", "displayName": "Line Blue (frontend)", "canonical": "#0455a1", "cssVar": "--line-frontend", "tonalRamp": ["oklch(15% 0.06 254)", "oklch(28% 0.1 254)", "oklch(37% 0.13 254)", "oklch(45.2% 0.141 254)", "oklch(58% 0.12 254)", "oklch(70% 0.09 254)", "oklch(83% 0.05 254)", "oklch(95% 0.02 254)"] },
+      "line-red": { "role": "secondary", "displayName": "Line Red (backend)", "canonical": "#e3342f", "cssVar": "--line-backend", "tonalRamp": ["oklch(15% 0.06 28)", "oklch(28% 0.11 28)", "oklch(40% 0.16 28)", "oklch(50% 0.19 28)", "oklch(60% 0.212 28)", "oklch(72% 0.14 28)", "oklch(84% 0.07 28)", "oklch(95% 0.025 28)"] },
+      "platform-edge-yellow": { "role": "tertiary", "displayName": "Platform Edge Yellow", "canonical": "#ffcd00", "cssVar": "--signal", "tonalRamp": ["oklch(15% 0.03 91)", "oklch(30% 0.06 91)", "oklch(45% 0.09 91)", "oklch(58% 0.12 91)", "oklch(72% 0.15 91)", "oklch(86.7% 0.177 91)", "oklch(91% 0.12 91)", "oklch(95% 0.06 91)"] },
+      "platform-white": { "role": "neutral", "displayName": "Platform White", "canonical": "#ffffff", "cssVar": "--background", "tonalRamp": ["oklch(15% 0 0)", "oklch(27% 0 0)", "oklch(39% 0 0)", "oklch(51% 0 0)", "oklch(63% 0 0)", "oklch(75% 0 0)", "oklch(87% 0 0)", "oklch(100% 0 0)"] },
+      "platform-stone": { "role": "neutral", "displayName": "Platform Stone", "canonical": "#f2f2ee", "cssVar": "--muted", "tonalRamp": ["oklch(15% 0.005 107)", "oklch(27% 0.005 107)", "oklch(39% 0.005 107)", "oklch(51% 0.005 107)", "oklch(63% 0.005 107)", "oklch(75% 0.005 107)", "oklch(87% 0.005 107)", "oklch(96% 0.005 107)"] },
+      "worn-ink": { "role": "neutral", "displayName": "Worn Ink", "canonical": "#585853", "cssVar": "--muted-foreground", "tonalRamp": ["oklch(15% 0.008 107)", "oklch(27% 0.008 107)", "oklch(37% 0.008 107)", "oklch(45.9% 0.008 107)", "oklch(60% 0.008 107)", "oklch(72% 0.008 107)", "oklch(84% 0.008 107)", "oklch(95% 0.008 107)"] },
+      "tile-joint": { "role": "neutral", "displayName": "Tile Joint", "canonical": "#d6d6d0", "cssVar": "--border", "tonalRamp": ["oklch(15% 0.008 107)", "oklch(27% 0.008 107)", "oklch(39% 0.008 107)", "oklch(51% 0.008 107)", "oklch(63% 0.008 107)", "oklch(75% 0.008 107)", "oklch(87.4% 0.008 107)", "oklch(95% 0.008 107)"] },
+      "sign-dim": { "role": "neutral", "displayName": "Sign Dim", "canonical": "#b9b9b3", "cssVar": "--sign-muted", "tonalRamp": ["oklch(15% 0.008 107)", "oklch(27% 0.008 107)", "oklch(39% 0.008 107)", "oklch(51% 0.008 107)", "oklch(63% 0.008 107)", "oklch(78.4% 0.008 107)", "oklch(87% 0.008 107)", "oklch(95% 0.008 107)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The person's name in the home hero only." },
+      "headline": { "displayName": "Headline", "purpose": "h1 inside a charcoal page sign or station sign; 3rem below 768px, 4.5rem above." },
+      "section": { "displayName": "Section", "purpose": "Home section headings under a 4px charcoal rule; 1.875rem below 768px, 2.25rem above." },
+      "title": { "displayName": "Title", "purpose": "Role titles, result values, skill-group names, station-detail subheads (1.25rem to 1.5rem)." },
+      "body": { "displayName": "Body", "purpose": "Running copy capped at 60-70ch; lead copy at 1.125rem." },
+      "label": { "displayName": "Label", "purpose": "Nav, buttons (1rem at default size), arrow links, legend, availability items." },
+      "station-name": { "displayName": "Station Name", "purpose": "Station names on the line map, on or near a plate." },
+      "timetable": { "displayName": "Timetable (Overpass Mono)", "purpose": "Years, periods and date ranges only (0.75rem to 0.875rem)." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Easing for the line draw-in and station pop." },
+      { "name": "draw-x / draw-y", "value": "520ms ease-out-expo, scaleX/scaleY from 0", "purpose": "Each track half draws in once on load (horizontal from 768px, vertical below); motion-safe only." },
+      { "name": "stop", "value": "420ms ease-out-expo, opacity 0 and scale 0.4 to rest", "purpose": "Station markers pop in as the track reaches them; motion-safe only." },
+      { "name": "station-step", "value": "110ms", "purpose": "Stagger per station; the end half of a station starts 55ms after its start half." },
+      { "name": "state-transition", "value": "color/background 150ms", "purpose": "All hover and active states are colour transitions; nothing moves or lifts." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ],
+    "focus": {
+      "default": "outline: 3px solid var(--ring); outline-offset: 3px",
+      "onSign": "outline-color: var(--signal) inside charcoal bands"
+    },
+    "patterns": [
+      { "name": "track-planned", "value": "repeating-linear-gradient(var(--track-angle, 90deg), currentColor 0 10px, transparent 10px 16px)", "purpose": "Dashed planned track toward the terminus; the only patterned fill in the system." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "First action in a contact group on white (Email).",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\"><svg aria-hidden=\"true\" width=\"20\" height=\"20\" viewBox=\"0 0 256 256\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"20\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"32\" y=\"56\" width=\"192\" height=\"144\"/><polyline points=\"224 56 128 144 32 56\"/></svg>Email me</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 44px; padding: 0 16px; border: 2px solid transparent; border-radius: 0; font-family: 'Overpass Variable', 'Overpass Fallback', sans-serif; font-weight: 700; font-size: 1rem; white-space: nowrap; text-decoration: none; transition: background-color 150ms, color 150ms; } .ds-btn-primary { background: var(--sign, #1d1d1b); color: var(--sign-foreground, #ffffff); } .ds-btn-primary:hover { background: color-mix(in srgb, var(--sign, #1d1d1b) 85%, transparent); } .ds-btn-primary:focus-visible { outline: 3px solid var(--ring, #1d1d1b); outline-offset: 3px; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary actions on white (LinkedIn, GitHub, resume).",
+      "html": "<a class=\"ds-btn-outline\" href=\"#\"><svg aria-hidden=\"true\" width=\"20\" height=\"20\" viewBox=\"0 0 256 256\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"20\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"128\" y1=\"40\" x2=\"128\" y2=\"152\"/><polyline points=\"80 104 128 152 176 104\"/><line x1=\"40\" y1=\"200\" x2=\"216\" y2=\"200\"/></svg>Download resume (PDF)</a>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 16px; border: 2px solid var(--sign, #1d1d1b); border-radius: 0; background: var(--background, #ffffff); color: var(--foreground, #1d1d1b); font-family: 'Overpass Variable', 'Overpass Fallback', sans-serif; font-weight: 700; font-size: 1rem; text-decoration: none; transition: background-color 150ms, color 150ms; } .ds-btn-outline:hover { background: var(--sign, #1d1d1b); color: var(--sign-foreground, #ffffff); } .ds-btn-outline:focus-visible { outline: 3px solid var(--ring, #1d1d1b); outline-offset: 3px; }"
+    },
+    {
+      "name": "Light and Inverse Buttons (on charcoal)",
+      "kind": "button",
+      "refersTo": "button-light",
+      "description": "Primary (white fill) and secondary (white outline) actions inside a charcoal sign band; focus is yellow here.",
+      "html": "<div class=\"ds-band\"><a class=\"ds-btn-light\" href=\"#\">Email me</a> <a class=\"ds-btn-inverse\" href=\"#\">LinkedIn</a></div>",
+      "css": ".ds-band { display: flex; gap: 8px; padding: 24px; background: var(--sign, #1d1d1b); } .ds-btn-light, .ds-btn-inverse { display: inline-flex; align-items: center; height: 44px; padding: 0 16px; border: 2px solid transparent; border-radius: 0; font-family: 'Overpass Variable', 'Overpass Fallback', sans-serif; font-weight: 700; font-size: 1rem; text-decoration: none; transition: background-color 150ms, color 150ms; } .ds-btn-light { background: var(--sign-foreground, #ffffff); color: var(--sign, #1d1d1b); } .ds-btn-light:hover { background: color-mix(in srgb, var(--sign-foreground, #ffffff) 85%, transparent); } .ds-btn-inverse { background: transparent; border-color: var(--sign-foreground, #ffffff); color: var(--sign-foreground, #ffffff); } .ds-btn-inverse:hover { background: var(--sign-foreground, #ffffff); color: var(--sign, #1d1d1b); } .ds-btn-light:focus-visible, .ds-btn-inverse:focus-visible { outline: 3px solid var(--signal, #ffcd00); outline-offset: 3px; }"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Charcoal sign band nav; active item gets white text and a 4px yellow bottom edge.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#\">Experience</a><a class=\"ds-nav-link is-active\" aria-current=\"page\" href=\"#\">Skills</a><a class=\"ds-nav-link\" href=\"#\">About</a><a class=\"ds-nav-link\" href=\"#\">Contact</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 4px; padding: 0 16px; background: var(--sign, #1d1d1b); } .ds-nav-link { display: flex; align-items: center; height: 64px; padding: 0 12px; border-bottom: 4px solid transparent; color: var(--sign-muted, #b9b9b3); font-family: 'Overpass Variable', 'Overpass Fallback', sans-serif; font-weight: 700; font-size: 0.875rem; text-decoration: none; transition: color 150ms; } .ds-nav-link:hover { color: var(--sign-foreground, #ffffff); } .ds-nav-link.is-active { border-bottom-color: var(--signal, #ffcd00); color: var(--sign-foreground, #ffffff); } .ds-nav-link:focus-visible { outline: 3px solid var(--signal, #ffcd00); outline-offset: 3px; }"
+    },
+    {
+      "name": "Stack Tag",
+      "kind": "chip",
+      "refersTo": "stack-tag",
+      "description": "Neutral square tag listing a role's stack; never territory-coloured.",
+      "html": "<ul class=\"ds-tags\"><li class=\"ds-tag\">React</li><li class=\"ds-tag\">Next.js</li><li class=\"ds-tag\">NestJS</li></ul>",
+      "css": ".ds-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; } .ds-tag { padding: 2px 8px; border: 1px solid color-mix(in srgb, var(--sign, #1d1d1b) 25%, transparent); border-radius: 0; color: var(--muted-foreground, #585853); font-family: 'Overpass Variable', 'Overpass Fallback', sans-serif; font-size: 0.75rem; font-weight: 600; }"
+    },
+    {
+      "name": "Section Heading",
+      "kind": "custom",
+      "refersTo": "section",
+      "description": "Black heading under a 4px charcoal rule; the rule is the only opener.",
+      "html": "<h2 class=\"ds-section-heading\">The line so far</h2>",
+      "css": ".ds-section-heading { margin: 0; padding-top: 12px; border-top: 4px solid var(--sign, #1d1d1b); color: var(--foreground, #1d1d1b); font-family: 'Overpass Variable', 'Overpass Fallback', sans-serif; font-size: 2.25rem; font-weight: 900; letter-spacing: -0.025em; line-height: 1.2; }"
+    },
+    {
+      "name": "Line Map Station",
+      "kind": "custom",
+      "refersTo": "station-plate",
+      "description": "Two parallel tracks through an interchange capsule; hover or focus fills marker and name plate charcoal.",
+      "html": "<a class=\"ds-station\" href=\"#\"><span class=\"ds-station-name\">Catho</span><span class=\"ds-rail\"><span class=\"ds-lane ds-lane-fe\"></span><span class=\"ds-lane ds-lane-be\"></span><span class=\"ds-marker\"></span></span><span class=\"ds-station-meta\"><b>2022</b>Full-Stack Developer</span></a>",
+      "css": ".ds-station { display: grid; grid-template-rows: 3.5rem 2.5rem auto; width: 136px; color: var(--foreground, #1d1d1b); text-align: center; text-decoration: none; font-family: 'Overpass Variable', 'Overpass Fallback', sans-serif; } .ds-station-name { align-self: end; justify-self: center; margin-bottom: 8px; padding: 2px 6px; font-size: 0.875rem; font-weight: 900; line-height: 1.25; transition: background-color 150ms, color 150ms; } .ds-rail { position: relative; } .ds-lane { position: absolute; left: 0; right: 0; height: 8px; } .ds-lane-fe { top: 10px; background: var(--line-frontend, #0455a1); } .ds-lane-be { top: 22px; background: var(--line-backend, #e3342f); } .ds-marker { position: absolute; top: 4px; left: 50%; z-index: 1; width: 20px; height: 32px; transform: translateX(-50%); border: 3px solid var(--sign, #1d1d1b); border-radius: 9999px; background: var(--background, #ffffff); transition: background-color 150ms; } .ds-station-meta { display: flex; flex-direction: column; padding-top: 8px; color: var(--muted-foreground, #585853); font-size: 0.75rem; } .ds-station-meta b { color: var(--foreground, #1d1d1b); font-family: 'Overpass Mono Variable', ui-monospace, monospace; font-weight: 700; } .ds-station:hover .ds-marker, .ds-station:focus-visible .ds-marker { background: var(--sign, #1d1d1b); } .ds-station:hover .ds-station-name, .ds-station:focus-visible .ds-station-name { background: var(--sign, #1d1d1b); color: var(--sign-foreground, #ffffff); } .ds-station:focus-visible { outline: 3px solid var(--ring, #1d1d1b); outline-offset: 3px; }"
+    },
+    {
+      "name": "Terminus Plate",
+      "kind": "custom",
+      "refersTo": "terminus-plate",
+      "description": "Dashed planned tracks ending at a charcoal end bar under the yellow destination plate.",
+      "html": "<a class=\"ds-terminus\" href=\"#\"><span class=\"ds-terminus-plate\">Your team</span><span class=\"ds-terminus-rail\"><span class=\"ds-planned ds-planned-fe\"></span><span class=\"ds-planned ds-planned-be\"></span><span class=\"ds-endbar\"></span></span></a>",
+      "css": ".ds-terminus { display: inline-flex; flex-direction: column; align-items: center; gap: 8px; text-decoration: none; font-family: 'Overpass Variable', 'Overpass Fallback', sans-serif; } .ds-terminus-plate { padding: 2px 6px; background: var(--signal, #ffcd00); color: var(--signal-foreground, #1d1d1b); font-size: 0.875rem; font-weight: 900; line-height: 1.25; } .ds-terminus-rail { position: relative; width: 120px; height: 40px; } .ds-planned { position: absolute; left: 0; width: 60px; height: 8px; background-image: repeating-linear-gradient(90deg, currentColor 0 10px, transparent 10px 16px); } .ds-planned-fe { top: 10px; color: var(--line-frontend, #0455a1); } .ds-planned-be { top: 22px; color: var(--line-backend, #e3342f); } .ds-endbar { position: absolute; top: 0; left: 60px; width: 8px; height: 40px; background: var(--sign, #1d1d1b); } .ds-terminus:focus-visible { outline: 3px solid var(--ring, #1d1d1b); outline-offset: 3px; }"
+    },
+    {
+      "name": "Calm Panel",
+      "kind": "card",
+      "refersTo": "calm-panel",
+      "description": "The one stone panel per view carrying facts and actions; square, flat, no border.",
+      "html": "<div class=\"ds-panel\"><p class=\"ds-panel-title\"><span class=\"ds-dot ds-dot-fe\"></span><span class=\"ds-dot ds-dot-be\"></span>Senior Full Stack Engineer</p><p class=\"ds-panel-sub\">React, Next.js, Node.js, TypeScript</p></div>",
+      "css": ".ds-panel { display: flex; flex-direction: column; gap: 8px; padding: 28px; background: var(--muted, #f2f2ee); border-radius: 0; font-family: 'Overpass Variable', 'Overpass Fallback', sans-serif; } .ds-panel-title { display: flex; align-items: center; gap: 4px; margin: 0; font-size: 1.875rem; font-weight: 900; letter-spacing: -0.025em; } .ds-dot { width: 12px; height: 12px; border-radius: 9999px; } .ds-dot-be { margin-right: 8px; } .ds-dot-fe { background: var(--line-frontend, #0455a1); } .ds-dot-be { background: var(--line-backend, #e3342f); } .ds-panel-sub { margin: 0; color: var(--muted-foreground, #585853); font-weight: 700; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Platform Sign",
+    "overview": "The site reads like a metro platform: a white floor, charcoal enamel sign bands carrying white Overpass, and a route diagram that does the storytelling. The career is one line with two parallel tracks, frontend in line blue and backend in line red, and every role is a station on it. Full-stack roles are interchanges (a capsule where both tracks stop); frontend-only roles let the red track run straight through. The rest of the system exists to stay out of the diagram's way.\n\nDensity is low and confident. Each view has one word set big enough to win (the name, the station name, the page sign) and one calm stone panel that carries the facts and the actions. Everything is flat: no shadows, no gradients, no card stacks. Hierarchy comes from scale, weight 900 against 400, heavy charcoal rules, and the switch between white platform and charcoal sign. The rejected alternative is the dark developer hero with a gradient name and a cloud of coloured skill pills.",
+    "keyCharacteristics": [
+      "White platform ground with full-bleed charcoal sign bands (header, page signs, contact terminus, footer).",
+      "Two territory colours only, blue and red, always meaning frontend and backend.",
+      "Yellow is the platform edge: rare, reserved for \"you are here\" and focus on dark.",
+      "Square corners everywhere except route-diagram marks, which are round.",
+      "Overpass Black for every heading; Overpass Mono only for dates.",
+      "Motion is the line drawing itself once on load, then plain colour transitions."
+    ],
+    "rules": [
+      { "name": "The Territory Rule", "body": "Blue and red fill only territory marks: tracks, track bullets, legend swatches, track bars. They never fill a button, a panel, a heading or a status. If a mark is not about frontend or backend, it is charcoal.", "section": "colors" },
+      { "name": "The Platform Edge Rule", "body": "Yellow marks where you are or where the eye must land on charcoal: active nav, focus on dark, selection, skip link, current stop, terminus plate. It is never a call-to-action fill. Primary actions are charcoal on white and white on charcoal.", "section": "colors" },
+      { "name": "The Timetable Rule", "body": "Overpass Mono sets dates, years and periods only. Codes, labels, tags and buttons stay in Overpass.", "section": "typography" },
+      { "name": "The Signage Weight Rule", "body": "Every heading is Black (900) with tight tracking (-0.025em, down to -0.035em at display size). Body never goes bold for emphasis inside paragraphs; emphasis is a label or a plate.", "section": "typography" },
+      { "name": "The Enamel Rule", "body": "Dark surfaces are full-bleed sign bands, not floating dark cards. Stacked bands are separated by a Sign Dim hairline at 25-30% alpha.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep blue and red for frontend and backend marks only, and show both together whenever a role is full-stack.",
+      "Do put the primary action in charcoal on white and white on charcoal; secondary actions outline the same colour.",
+      "Do open every internal page with a full-bleed charcoal sign band and a headline-size Black h1.",
+      "Do keep corners at 0; reserve round forms for stations, interchanges, track bullets and the roundel.",
+      "Do set dates, years and periods in Overpass Mono, and nothing else.",
+      "Do gate the draw-in and stop animations behind motion-safe; everything else is a colour transition."
+    ],
+    "donts": [
+      "Don't use yellow as a button or CTA fill.",
+      "Don't add shadows, gradients or glows; the dashed planned track is the only patterned fill.",
+      "Don't round buttons, panels, plates, tags or image frames.",
+      "Don't colour skill tags or stack lists by territory, or build a pill cloud.",
+      "Don't place a label, kicker or eyebrow above a section heading; the charcoal rule is the opener.",
+      "Don't float a dark card on the white platform; dark means a full-bleed sign band."
+    ]
+  }
+}
