@@ -5,7 +5,8 @@ import react from "ultracite/oxlint/react";
 export default defineConfig({
   env: core.env,
   extends: [core, react],
-  ignorePatterns: core.ignorePatterns,
+  // Vendored agent skills (installed with `skills add`) are third-party code.
+  ignorePatterns: [...core.ignorePatterns, ".claude/skills/**"],
   rules: {
     // Carried over from the old .oxlintrc.json: the react preset turns this
     // off, but the project keeps it to protect Fast Refresh.
