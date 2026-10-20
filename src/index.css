@@ -16,6 +16,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  color-scheme: light;
   --background: #ffffff;
   --foreground: #1d1d1b;
   --card: #ffffff;
@@ -42,6 +43,31 @@
   --line-frontend: #0455a1;
   --line-backend: #e3342f;
   --radius: 0rem;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #181817;
+  --foreground: #ecece6;
+  --card: #181817;
+  --card-foreground: #ecece6;
+  --popover: #181817;
+  --popover-foreground: #ecece6;
+  --primary: #ecece6;
+  --primary-foreground: #181817;
+  --secondary: #222220;
+  --secondary-foreground: #ecece6;
+  --muted: #222220;
+  --muted-foreground: #a9a9a2;
+  --accent: #222220;
+  --accent-foreground: #ecece6;
+  --destructive: #f0645d;
+  --border: #3a3a35;
+  --input: #3a3a35;
+  --ring: #ffcd00;
+  --sign: #0b0b0a;
+  --line-frontend: #3b82d4;
+  --line-backend: #ec4a43;
 }
 
 @theme inline {
@@ -113,7 +139,7 @@
   }
   html {
     @apply bg-background text-foreground font-sans antialiased;
-    scrollbar-color: var(--sign) var(--muted);
+    scrollbar-color: var(--primary) var(--muted);
     scroll-behavior: smooth;
     text-rendering: optimizeLegibility;
   }
@@ -148,6 +174,12 @@
       scroll-behavior: auto;
     }
   }
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 280ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 #root {

@@ -15,7 +15,7 @@ const LineLegend = () => {
       <li className="flex items-center gap-2">
         <span
           aria-hidden="true"
-          className="border-sign h-5 w-8 rounded-full border-[3px]"
+          className="border-foreground h-5 w-8 rounded-full border-[3px]"
         />
         {ui.line.legendInterchange}
       </li>

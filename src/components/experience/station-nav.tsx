@@ -22,7 +22,7 @@ const StationLink = ({
   return (
     <Link
       className={cn(
-        "group border-sign hover:bg-muted flex flex-col gap-1 border-t-4 pt-3",
+        "group border-foreground hover:bg-muted flex flex-col gap-1 border-t-4 pt-3",
         isNext && "items-end text-right sm:col-start-2"
       )}
       to={`/experience/${target.slug}`}

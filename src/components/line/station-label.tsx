@@ -16,8 +16,8 @@ const StationLabel = ({ isActive, role }: StationLabelProps) => {
       <span className="col-start-2 flex items-end self-end pt-3 md:col-start-1 md:row-start-1 md:justify-center md:px-1 md:pt-0 md:pb-2">
         <span
           className={cn(
-            "group-hover:bg-sign group-hover:text-sign-foreground px-1.5 py-0.5 leading-tight font-black transition-colors md:text-sm",
-            isActive && "bg-sign text-sign-foreground"
+            "group-hover:bg-primary group-hover:text-primary-foreground px-1.5 py-0.5 leading-tight font-black transition-colors md:text-sm",
+            isActive && "bg-primary text-primary-foreground"
           )}
         >
           {stationName(role)}

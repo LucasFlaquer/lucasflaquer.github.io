@@ -7,7 +7,7 @@ interface StationDetailsProps {
 }
 
 const HEADING = "font-black text-2xl tracking-tight";
-const ASIDE_BLOCK = "flex flex-col gap-3 border-sign border-t-2 pt-3";
+const ASIDE_BLOCK = "flex flex-col gap-3 border-foreground border-t-2 pt-3";
 
 const StationStory = ({ role }: StationDetailsProps) => {
   const { pick, ui } = useLocale();
@@ -29,7 +29,7 @@ const StationStory = ({ role }: StationDetailsProps) => {
             >
               <span
                 aria-hidden="true"
-                className="border-sign mt-1.5 size-3.5 rounded-full border-[3px]"
+                className="border-foreground mt-1.5 size-3.5 rounded-full border-[3px]"
               />
               {item}
             </li>

@@ -16,7 +16,7 @@ export const buttonVariants = cva(
       },
       variant: {
         default:
-          "bg-sign text-sign-foreground hover:bg-sign/85 border-transparent",
+          "bg-primary text-primary-foreground hover:bg-primary/85 border-transparent",
         ghost: "hover:bg-muted hover:text-foreground border-transparent",
         inverse:
           "border-sign-foreground text-sign-foreground hover:bg-sign-foreground hover:text-sign bg-transparent",
@@ -24,7 +24,7 @@ export const buttonVariants = cva(
           "bg-sign-foreground text-sign hover:bg-sign-foreground/85 border-transparent",
         link: "text-foreground px-0 underline underline-offset-4 hover:decoration-[3px]",
         outline:
-          "border-sign bg-background text-foreground hover:bg-sign hover:text-sign-foreground",
+          "border-primary bg-background text-foreground hover:bg-primary hover:text-primary-foreground",
       },
     },
   }

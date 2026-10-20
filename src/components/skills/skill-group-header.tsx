@@ -10,7 +10,7 @@ interface SkillGroupHeaderProps {
 const BAR_COLOR = {
   backend: "bg-line-backend",
   frontend: "bg-line-frontend",
-  neutral: "bg-sign",
+  neutral: "bg-primary",
 } as const;
 
 const SkillGroupHeader = ({ group, level: Heading }: SkillGroupHeaderProps) => {

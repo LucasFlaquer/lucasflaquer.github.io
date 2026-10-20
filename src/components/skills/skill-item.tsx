@@ -18,7 +18,7 @@ const SkillItem = ({ skill }: SkillItemProps) => {
           <span className="text-muted-foreground">{ui.skills.usedIn}</span>
           {roles.map((role) => (
             <Link
-              className="bg-sign text-sign-foreground hover:bg-sign/85 px-1.5 font-bold"
+              className="bg-primary text-primary-foreground hover:bg-primary/85 px-1.5 font-bold"
               key={role.slug}
               to={`/experience/${role.slug}`}
             >

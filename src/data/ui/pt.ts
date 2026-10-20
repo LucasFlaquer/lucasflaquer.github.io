@@ -63,4 +63,5 @@ export const pt: UiStrings = {
     usedIn: "Usada em",
   },
   summary: "Resumo",
+  theme: { dark: "Tema escuro", label: "Tema", light: "Tema claro" },
 };

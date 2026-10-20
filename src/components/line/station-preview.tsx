@@ -18,7 +18,7 @@ const StationPreview = ({ role }: StationPreviewProps) => {
     <section
       aria-label={ui.line.preview}
       aria-live="polite"
-      className="border-sign bg-muted mt-6 hidden grid-cols-[minmax(15rem,auto)_1fr_auto] items-center gap-8 border-t-4 px-6 py-5 md:grid"
+      className="border-foreground bg-muted mt-6 hidden grid-cols-[minmax(15rem,auto)_1fr_auto] items-center gap-8 border-t-4 px-6 py-5 md:grid"
     >
       <div className="flex flex-col gap-1">
         <p className="flex items-center gap-2 text-lg font-black">

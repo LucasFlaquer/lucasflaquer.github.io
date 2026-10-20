@@ -11,6 +11,14 @@ colors:
   platform-edge-yellow: "#ffcd00"
   line-blue: "#0455a1"
   line-red: "#e3342f"
+  night-ground: "#181817"
+  night-stone: "#222220"
+  deep-enamel: "#0b0b0a"
+  platform-chalk: "#ecece6"
+  worn-chalk: "#a9a9a2"
+  night-joint: "#3a3a35"
+  line-blue-night: "#3b82d4"
+  line-red-night: "#ec4a43"
 typography:
   display:
     fontFamily: "Overpass Variable, Overpass Fallback, ui-sans-serif, sans-serif"
@@ -141,6 +149,7 @@ Density is low and confident. Each view has one word set big enough to win (the 
 - Square corners everywhere except route-diagram marks, which are round.
 - Overpass Black for every heading; Overpass Mono only for dates.
 - Motion is the line drawing itself once on load, then plain colour transitions.
+- A night platform (dark theme) mirrors the same hierarchy; the visitor switches it beside EN/PT.
 
 ## Colors
 
@@ -166,6 +175,21 @@ A near-neutral warm-grey signage palette with two transit colours that carry mea
 - **Worn Ink** (#585853): Secondary text on white and stone (stack lines, role titles under stations, notes).
 - **Tile Joint** (#d6d6d0): Default border and the 2px row rules between list items.
 - **Sign Dim** (#b9b9b3): Secondary text on charcoal (inactive nav, back links, periods on station signs, footer). At 25-30% alpha it draws hairlines between stacked charcoal bands.
+
+### Night Platform (dark theme)
+
+The same station after dark, chosen by the visitor or by their system setting. The hierarchy keeps its order: the sign bands stay the darkest surface, the platform sits one step up, the calm panel one more.
+
+- **Night Ground** (#181817): Page ground.
+- **Night Stone** (#222220): The calm panel, preview strip and results band.
+- **Deep Enamel** (#0b0b0a): Sign bands. Every band edge that meets the ground carries the Sign Dim hairline, since the tonal step alone is too small to read.
+- **Platform Chalk** (#ecece6): Text and ink on the ground: rules, station markers, name plates and primary buttons all flip to chalk with ground-coloured text, so a plate still reads as a plate.
+- **Worn Chalk** (#a9a9a2): Secondary text (6.7:1 on Night Stone).
+- **Night Joint** (#3a3a35): Borders and row rules.
+- **Line Blue / Line Red at night** (#3b82d4 / #ec4a43): The territory colours lift to clear 4:1 on every dark surface; they keep their meaning and their pairing.
+- **Focus** turns yellow everywhere, since the whole page is now "dark".
+
+**The Ink Rule.** `sign` names the band surface, never the ink. Charcoal marks on the ground (rules, plates, markers, primary fills) use `foreground` / `primary`, which is what lets them flip at night while the bands stay enamel.
 
 ### Named Rules
 
@@ -247,6 +271,7 @@ Blocky and certain, like a sign plate you can press.
 - **Style:** Inside the charcoal header band. Labels 0.875rem bold in Sign Dim; hover to white.
 - **Active:** White text with a 4px yellow bottom edge, full band height (64px; 48px in the mobile row).
 - **Language switch:** A 2px Sign Dim-bordered pair (EN / PT); the selected side is a white plate with charcoal text.
+- **Theme switch:** The same bordered pair as the language switch, sun and moon icons (Phosphor bold, 16px); the selected side is the white plate. Switching crossfades the whole page in 280ms (expo ease-out) through a View Transition, motion-safe only.
 - **Header actions:** Resume download as a small inverse button.
 
 ### Line Map (signature)

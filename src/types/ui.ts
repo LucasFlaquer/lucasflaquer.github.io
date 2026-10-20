@@ -52,4 +52,5 @@ export interface UiStrings {
   results: string;
   skills: { heading: string; lead: string; more: string; usedIn: string };
   summary: string;
+  theme: { dark: string; label: string; light: string };
 }

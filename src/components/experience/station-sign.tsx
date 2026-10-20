@@ -14,7 +14,7 @@ interface StationSignProps {
 const StationSign = ({ role }: StationSignProps) => {
   const { pick, ui } = useLocale();
   return (
-    <div className="border-sign-muted/25 bg-sign text-sign-foreground border-t">
+    <div className="border-sign-muted/25 bg-sign text-sign-foreground dark:border-b">
       <PageContainer className="flex flex-col gap-5 pt-8 pb-12">
         <Link
           className="text-sign-muted hover:text-sign-foreground flex items-center gap-2 self-start text-sm font-bold"

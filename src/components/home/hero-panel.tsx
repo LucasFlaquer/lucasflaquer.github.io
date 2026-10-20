@@ -20,7 +20,7 @@ const HeroPanel = () => {
       <ul className="flex flex-wrap gap-x-4 gap-y-1 text-sm font-semibold">
         {pick(profile.availability).map((item) => (
           <li className="flex items-center gap-2" key={item}>
-            <span aria-hidden="true" className="bg-sign size-1.5" />
+            <span aria-hidden="true" className="bg-primary size-1.5" />
             {item}
           </li>
         ))}

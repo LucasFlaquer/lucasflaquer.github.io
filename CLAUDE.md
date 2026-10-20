@@ -42,7 +42,8 @@ Before finishing a change, run `pnpm check` and `pnpm build`; CI runs both and a
 - `src/app.tsx` wraps `RouterProvider` (routes in `src/router.ts`) in `LocaleProvider`. `SiteLayout` renders the header, `<Outlet />`, footer and `ScrollRestoration`; `useHashScroll` scrolls to `/#section` targets.
 - i18n: `useLocale()` returns `locale`, `setLocale`, `pick` (reads a `Localized<T>` = `{ en, pt }`) and `ui` (UI strings from `src/data/ui/en.ts` / `pt.ts`, typed by `src/types/ui.ts`). The choice persists in `localStorage` and sets `<html lang>`. Every new string needs both languages.
 - Content: `src/data/profile.ts`, `src/data/experience/*.ts` (one role per file, ordered in `src/data/experience.ts`), `results.ts`, `skills.ts`, `about.ts`. A role's `stack` uses the same names as `skills.ts` so `/skills` can link each skill to the roles that used it. Never add facts that are not in the resume.
-- `src/index.css` imports Tailwind, `tw-animate-css`, shadcn's base CSS and the fonts, and defines the theme on `:root`: shadcn tokens plus `--sign` (charcoal sign panels), `--signal` (yellow: actions, focus on dark, selection), `--line-frontend` and `--line-backend` (territory colors, never used for state). Radius is 0. The `track-planned` utility draws the dashed "planned" track. There is no dark theme. Use these tokens rather than hard-coding colors.
+- `src/index.css` imports Tailwind, `tw-animate-css`, shadcn's base CSS and the fonts, and defines the theme on `:root`: shadcn tokens plus `--sign` (charcoal sign panels), `--signal` (yellow: actions, focus on dark, selection), `--line-frontend` and `--line-backend` (territory colors, never used for state). Radius is 0. The `track-planned` utility draws the dashed "planned" track. `.dark` (on `<html>`) redefines the tokens for the night platform. Use these tokens rather than hard-coding colors: `sign` is the band surface only; charcoal ink on the page ground (rules, plates, markers, primary buttons) uses `foreground` / `primary` so it flips in dark mode.
+- Theme: `useTheme()` returns `theme` and `setTheme` (`light` / `dark`). The first visit follows `prefers-color-scheme` (and keeps following it until the visitor picks); the choice persists in `localStorage` under `theme`. An inline script in `index.html` sets the `dark` class before first paint; `ThemeProvider` (`src/hooks/use-theme-state.ts`) keeps it in sync and crossfades the switch with a View Transition (skipped under reduced motion). The switch sits next to EN/PT in the header.
 - `src/lib/utils.ts` exports `cn`. `buttonVariants` lives in `src/components/ui/button-variants.ts` (style it links with it). shadcn components are added with `pnpm dlx shadcn@latest add <name>` and land in `src/components/ui/` (aliases in `components.json`: `@/components`, `@/components/ui`, `@/lib`, `@/hooks`).
 - `src/assets/` (create when needed) holds files imported from code; Vite hashes and bundles them.
 - `public/` holds files served as-is from the site root (`/favicon.svg`, the resume PDF).
@@ -61,8 +62,8 @@ src/app.tsx, router.ts        providers and route table
 src/pages/                    home, experience, about, skills, not-found pages
 src/components/               layout/, home/, line/ (strip map), experience/, about/, skills/, shared/, ui/
 src/data/                     typed bilingual content (profile, experience, results, skills, about, ui strings)
-src/hooks/                    use-locale, use-station-preview, use-hash-scroll
-src/lib/                      cn, locale context/storage, line geometry, role helpers
+src/hooks/                    use-locale, use-theme, use-theme-state, use-station-preview, use-hash-scroll
+src/lib/                      cn, locale and theme context/storage, line geometry, role helpers
 src/types/                    content and UI string types
 src/index.css                 Tailwind entry, theme tokens, base styles, animations
 vite.config.ts                Vite config (React + Tailwind plugins, @ alias)

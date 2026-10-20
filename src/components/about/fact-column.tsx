@@ -7,7 +7,7 @@ interface FactColumnProps {
 }
 
 const FactColumn = ({ children, heading, level: Heading }: FactColumnProps) => (
-  <div className="border-sign flex flex-col gap-2 border-t-2 pt-3">
+  <div className="border-foreground flex flex-col gap-2 border-t-2 pt-3">
     <Heading className="text-lg font-black tracking-tight">{heading}</Heading>
     {children}
   </div>

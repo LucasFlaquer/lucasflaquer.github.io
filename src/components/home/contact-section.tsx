@@ -18,7 +18,7 @@ const ContactSection = () => {
   return (
     <section
       aria-labelledby="contact-heading"
-      className="bg-sign text-sign-foreground scroll-mt-28 py-20"
+      className="border-sign-muted/25 bg-sign text-sign-foreground scroll-mt-28 py-20 dark:border-t"
       id="contact"
     >
       <PageContainer className="flex flex-col gap-6">

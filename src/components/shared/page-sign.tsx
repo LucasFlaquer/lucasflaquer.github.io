@@ -8,7 +8,7 @@ interface PageSignProps {
 }
 
 const PageSign = ({ children, title }: PageSignProps) => (
-  <div className="border-sign-muted/25 bg-sign text-sign-foreground border-t">
+  <div className="border-sign-muted/25 bg-sign text-sign-foreground dark:border-b">
     <PageContainer className="flex flex-col gap-5 pt-12 pb-12">
       <span aria-hidden="true" className="flex gap-1">
         <span className="bg-line-frontend h-2 w-12" />

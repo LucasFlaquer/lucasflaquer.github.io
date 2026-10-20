@@ -18,7 +18,7 @@ const LineTerminus = ({ index }: LineTerminusProps) => {
           <TrackHalves end="none" index={index} start="planned" />
           <span
             aria-hidden="true"
-            className="bg-sign absolute max-md:top-1/2 max-md:left-0 max-md:h-2 max-md:w-9 max-md:-translate-y-1/2 md:top-0 md:left-1/2 md:h-10 md:w-2 md:-translate-x-1/2"
+            className="bg-primary absolute max-md:top-1/2 max-md:left-0 max-md:h-2 max-md:w-9 max-md:-translate-y-1/2 md:top-0 md:left-1/2 md:h-10 md:w-2 md:-translate-x-1/2"
           />
         </span>
         <span className="col-start-2 flex items-end self-end pt-3 md:col-start-1 md:row-start-1 md:justify-center md:pt-0 md:pb-2">

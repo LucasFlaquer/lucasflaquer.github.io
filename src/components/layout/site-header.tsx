@@ -3,6 +3,7 @@ import { Link } from "react-router";
 
 import LanguageSwitch from "@/components/layout/language-switch.tsx";
 import SiteNav from "@/components/layout/site-nav.tsx";
+import ThemeSwitch from "@/components/layout/theme-switch.tsx";
 import PageContainer from "@/components/shared/page-container.tsx";
 import { buttonVariants } from "@/components/ui/button-variants.ts";
 import { profile } from "@/data/profile.ts";
@@ -42,11 +43,12 @@ const ResumeButton = () => {
 };
 
 const SiteHeader = () => (
-  <header className="bg-sign text-sign-foreground sticky top-0 z-40">
+  <header className="border-sign-muted/25 bg-sign text-sign-foreground sticky top-0 z-40 border-b">
     <PageContainer className="flex h-16 items-center gap-4 md:gap-8">
       <HomeLink />
       <SiteNav className="hidden md:flex" />
-      <div className="ml-auto flex items-center gap-3">
+      <div className="ml-auto flex items-center gap-2 sm:gap-3">
+        <ThemeSwitch />
         <LanguageSwitch />
         <ResumeButton />
       </div>

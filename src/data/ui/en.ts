@@ -63,4 +63,5 @@ export const en: UiStrings = {
     usedIn: "Used at",
   },
   summary: "Summary",
+  theme: { dark: "Dark theme", label: "Theme", light: "Light theme" },
 };

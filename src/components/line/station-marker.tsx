@@ -15,10 +15,10 @@ const StationMarker = ({
   <span
     aria-hidden="true"
     className={cn(
-      "border-sign bg-background group-hover:bg-sign motion-safe:animate-stop absolute z-10 rounded-full border-[3px] transition-colors",
+      "border-foreground bg-background group-hover:bg-primary motion-safe:animate-stop absolute z-10 rounded-full border-[3px] transition-colors",
       "max-md:top-1/2 max-md:left-[4px] max-md:-translate-y-1/2 md:top-[4px] md:left-1/2 md:-translate-x-1/2",
       isInterchange ? "max-md:h-5 max-md:w-8 md:h-8 md:w-5" : "size-5",
-      isActive && "bg-sign"
+      isActive && "bg-primary"
     )}
     style={{ animationDelay: drawDelay(index, false) }}
   />

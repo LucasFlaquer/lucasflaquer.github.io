@@ -11,7 +11,7 @@ interface SectionHeadingProps {
 const SectionHeading = ({ children, className, id }: SectionHeadingProps) => (
   <h2
     className={cn(
-      "border-sign border-t-4 pt-3 text-3xl font-black tracking-tight md:text-4xl",
+      "border-foreground border-t-4 pt-3 text-3xl font-black tracking-tight md:text-4xl",
       className
     )}
     id={id}

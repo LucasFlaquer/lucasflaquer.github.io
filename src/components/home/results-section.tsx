@@ -16,7 +16,7 @@ const ResultItem = ({ result }: { result: Result }) => {
       <p className="text-muted-foreground">{pick(result.detail)}</p>
       {role ? (
         <Link
-          className="bg-sign text-sign-foreground hover:bg-sign/85 mt-auto self-start px-1.5 py-0.5 text-sm font-bold"
+          className="bg-primary text-primary-foreground hover:bg-primary/85 mt-auto self-start px-1.5 py-0.5 text-sm font-bold"
           to={`/experience/${role.slug}`}
         >
           {stationName(role)}
