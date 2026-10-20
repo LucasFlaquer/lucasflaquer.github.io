@@ -1,7 +1,7 @@
 import type { Locale } from "@/types/content.ts";
 
 const STORAGE_KEY = "locale";
-const PORTUGUESE_PREFIX = "pt";
+const DEFAULT_LOCALE: Locale = "en";
 
 const isLocale = (value: string | null): value is Locale =>
   value === "en" || value === "pt";
@@ -16,10 +16,7 @@ const readStoredLocale = (): string | null => {
 
 export const readInitialLocale = (): Locale => {
   const stored = readStoredLocale();
-  if (isLocale(stored)) {
-    return stored;
-  }
-  return navigator.language.startsWith(PORTUGUESE_PREFIX) ? "pt" : "en";
+  return isLocale(stored) ? stored : DEFAULT_LOCALE;
 };
 
 export const storeLocale = (locale: Locale): boolean => {
