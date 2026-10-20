@@ -4,7 +4,9 @@ Guidance for Claude Code when working in this repository.
 
 ## Purpose
 
-Personal portfolio of Lucas Flaquer, served at https://lucasflaquer.github.io. The codebase was rebuilt from scratch on the Vite + React + TypeScript template (commit `99dd01f`) and then set up with Tailwind CSS v4 and shadcn/ui (commit `57541fd`). `src/app.tsx`, `src/app.css` and the assets in `src/assets/` are still the Vite starter demo. They are placeholders to be replaced by the portfolio content, not code to preserve.
+Personal portfolio of Lucas Flaquer, served at https://lucasflaquer.github.io. A home page summarises everything (career line, results, experience, skills, about, contact) and internal pages give the detail: `/experience/:slug`, `/about`, `/skills`. All content comes from the resume (`public/Lucas_Flaquer_CV_Fullstack.pdf`) and ships in English and Brazilian Portuguese.
+
+The visual world is a transit strip map: frontend (blue) and backend (red) run as two parallel tracks and full-stack roles are interchanges. The direction contract lives in `.impeccable/surfaces/src-app-tsx.md`.
 
 ## Stack
 
@@ -13,17 +15,18 @@ Personal portfolio of Lucas Flaquer, served at https://lucasflaquer.github.io. T
 - Vite 8 with `@vitejs/plugin-react` and `@tailwindcss/vite`; `@/` aliases `src/`
 - Tailwind CSS v4 (CSS-first config in `src/index.css`, no `tailwind.config`) with `tw-animate-css`
 - shadcn/ui (`base-maia` style on Base UI, `@base-ui/react`), configured in `components.json`; `class-variance-authority` for variants, `cn` from `@/lib/utils` for class merging
-- Phosphor icons (`@phosphor-icons/react`); fonts self-hosted through Fontsource (Nunito Sans for body, JetBrains Mono for headings)
+- React Router v8 (`createBrowserRouter`) for clean URLs
+- Phosphor icons (`@phosphor-icons/react`, `*Icon` exports); fonts self-hosted through Fontsource (Overpass for text and display, Overpass Mono for dates and codes only)
 - Ultracite v8 presets (`core`, `react`) on oxlint for linting and oxfmt for formatting (no ESLint, no Prettier)
 - pnpm 11 (`packageManager` field pins the version), Node 24 (`.nvmrc`)
-- No router, state library or test runner yet
+- No state library or test runner yet
 
 ## Commands
 
 ```sh
 pnpm install   # install dependencies
 pnpm dev       # Vite dev server with HMR (http://localhost:5173)
-pnpm build     # tsc -b (type-check) then vite build into dist/
+pnpm build     # tsc -b, vite build into dist/, then copy dist/index.html to dist/404.html
 pnpm preview   # serve the built dist/ locally
 pnpm lint      # oxlint only
 pnpm check     # ultracite check: oxlint + oxfmt format check
@@ -36,11 +39,13 @@ Before finishing a change, run `pnpm check` and `pnpm build`; CI runs both and a
 
 - `index.html` is the Vite entry. It holds the page `<title>`, favicon link and the `#root` div, and loads `/src/main.tsx` as a module.
 - `src/main.tsx` imports global styles (`src/index.css`) and renders `<App />` (from `src/app.tsx`) into `#root`.
-- `src/app.tsx` is the single page component. `src/app.css` holds the leftover demo styles; delete it with the demo rather than extending it.
-- `src/index.css` imports Tailwind, `tw-animate-css`, shadcn's base CSS and the fonts, and defines the shadcn theme: color variables on `:root` (`--background`, `--foreground`, `--primary`, `--muted-foreground`, `--border`, etc.) with dark values under `.dark`, mapped to Tailwind utilities in `@theme inline` (`bg-background`, `text-muted-foreground`, `font-heading`). Dark mode follows the `.dark` class (`@custom-variant dark`), not `prefers-color-scheme`, so a theme toggle has to set that class on an ancestor (usually `<html>`). Use these tokens rather than hard-coding colors.
-- `src/lib/utils.ts` exports `cn`. shadcn components are added with `pnpm dlx shadcn@latest add <name>` and land in `src/components/ui/` (aliases in `components.json`: `@/components`, `@/components/ui`, `@/lib`, `@/hooks`).
-- `src/assets/` holds files imported from code; Vite hashes and bundles them.
-- `public/` holds files served as-is from the site root (`/favicon.svg`, `/icons.svg`). `icons.svg` is an SVG sprite referenced with `<use href="/icons.svg#<id>">`.
+- `src/app.tsx` wraps `RouterProvider` (routes in `src/router.ts`) in `LocaleProvider`. `SiteLayout` renders the header, `<Outlet />`, footer and `ScrollRestoration`; `useHashScroll` scrolls to `/#section` targets.
+- i18n: `useLocale()` returns `locale`, `setLocale`, `pick` (reads a `Localized<T>` = `{ en, pt }`) and `ui` (UI strings from `src/data/ui/en.ts` / `pt.ts`, typed by `src/types/ui.ts`). The choice persists in `localStorage` and sets `<html lang>`. Every new string needs both languages.
+- Content: `src/data/profile.ts`, `src/data/experience/*.ts` (one role per file, ordered in `src/data/experience.ts`), `results.ts`, `skills.ts`, `about.ts`. A role's `stack` uses the same names as `skills.ts` so `/skills` can link each skill to the roles that used it. Never add facts that are not in the resume.
+- `src/index.css` imports Tailwind, `tw-animate-css`, shadcn's base CSS and the fonts, and defines the theme on `:root`: shadcn tokens plus `--sign` (charcoal sign panels), `--signal` (yellow: actions, focus on dark, selection), `--line-frontend` and `--line-backend` (territory colors, never used for state). Radius is 0. The `track-planned` utility draws the dashed "planned" track. There is no dark theme. Use these tokens rather than hard-coding colors.
+- `src/lib/utils.ts` exports `cn`. `buttonVariants` lives in `src/components/ui/button-variants.ts` (style it links with it). shadcn components are added with `pnpm dlx shadcn@latest add <name>` and land in `src/components/ui/` (aliases in `components.json`: `@/components`, `@/components/ui`, `@/lib`, `@/hooks`).
+- `src/assets/` (create when needed) holds files imported from code; Vite hashes and bundles them.
+- `public/` holds files served as-is from the site root (`/favicon.svg`, the resume PDF).
 
 ## Layout
 
@@ -50,12 +55,16 @@ Before finishing a change, run `pnpm check` and `pnpm build`; CI runs both and a
 .claude/skills/               vendored agent skills (shadcn, migrate-radix-to-base); ignored by oxlint and oxfmt
 index.html                    HTML entry
 components.json               shadcn/ui config (style, aliases, icon library)
-public/                       static files copied verbatim to dist/
+public/                       static files copied verbatim to dist/ (incl. resume PDF)
 src/main.tsx                  React bootstrap
-src/app.tsx, app.css          page component (currently the Vite demo)
-src/index.css                 Tailwind entry, shadcn theme variables and base styles
-src/lib/utils.ts              cn helper
-src/assets/                   bundled images
+src/app.tsx, router.ts        providers and route table
+src/pages/                    home, experience, about, skills, not-found pages
+src/components/               layout/, home/, line/ (strip map), experience/, about/, skills/, shared/, ui/
+src/data/                     typed bilingual content (profile, experience, results, skills, about, ui strings)
+src/hooks/                    use-locale, use-station-preview, use-hash-scroll
+src/lib/                      cn, locale context/storage, line geometry, role helpers
+src/types/                    content and UI string types
+src/index.css                 Tailwind entry, theme tokens, base styles, animations
 vite.config.ts                Vite config (React + Tailwind plugins, @ alias)
 tsconfig.app.json             TS config for src/
 tsconfig.node.json            TS config for vite.config.ts
@@ -86,7 +95,7 @@ The rules in `.claude/rules/` take precedence over conflicting guidance here and
 
 ## Deployment
 
-Every push to `master` (or a manual `workflow_dispatch`) runs `.github/workflows/deploy.yml`: install with `--frozen-lockfile`, `pnpm check`, `pnpm build`, then upload `dist/` and publish it to GitHub Pages. This is a user site (`<user>.github.io`), so it is served from the domain root and `vite.config.ts` needs no `base` option. If a client-side router is added later, GitHub Pages has no SPA fallback; use hash routing or add a `404.html` that redirects to `index.html`.
+Every push to `master` (or a manual `workflow_dispatch`) runs `.github/workflows/deploy.yml`: install with `--frozen-lockfile`, `pnpm check`, `pnpm build`, then upload `dist/` and publish it to GitHub Pages. This is a user site (`<user>.github.io`), so it is served from the domain root and `vite.config.ts` needs no `base` option. GitHub Pages has no SPA fallback, so the build copies `index.html` to `404.html`: deep links load the app (served with HTTP status 404).
 
 When adding dependencies, use `pnpm add` so `pnpm-lock.yaml` stays in sync; CI fails on a stale lockfile.
 
