@@ -54,7 +54,7 @@ export interface Profile {
   linkedinUrl: string;
   location: Localized<string>;
   name: string;
-  resumeFile: string;
+  resumeFile: Localized<string>;
   stackLine: string;
   summary: Localized<string>;
   title: Localized<string>;

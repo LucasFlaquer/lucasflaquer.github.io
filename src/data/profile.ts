@@ -26,7 +26,10 @@ export const profile: Profile = {
     pt: "Sorocaba, SP, Brasil (GMT-3)",
   },
   name: "Lucas Flaquer",
-  resumeFile: "/Lucas_Flaquer_CV_Fullstack.pdf",
+  resumeFile: {
+    en: "/Lucas_Flaquer_CV_Fullstack.pdf",
+    pt: "/Lucas_Flaquer_CV_Fullstack_PT.pdf",
+  },
   stackLine: "React, Next.js, Node.js, TypeScript",
   summary: {
     en: "Senior Full Stack Engineer with 7+ years building and shipping web products with TypeScript, React, Next.js and Node.js across banking, SaaS, life sciences and AI-powered products. Strong in SSR and performance, API design (REST, GraphQL, SSE, WebSockets), automated testing and code quality, working with distributed teams in the US, Asia and Brazil. Delivered a +30% increase in registered companies through a redesigned flow validated by an A/B test. Works daily with AI-assisted, spec-driven development using Claude Code.",

@@ -28,12 +28,12 @@ const HomeLink = () => {
 };
 
 const ResumeButton = () => {
-  const { ui } = useLocale();
+  const { pick, ui } = useLocale();
   return (
     <a
       className={buttonVariants({ size: "sm", variant: "inverse" })}
       download
-      href={profile.resumeFile}
+      href={pick(profile.resumeFile)}
     >
       <DownloadSimpleIcon aria-hidden="true" weight="bold" />
       <span className="sr-only sm:not-sr-only">{ui.contact.resume}</span>

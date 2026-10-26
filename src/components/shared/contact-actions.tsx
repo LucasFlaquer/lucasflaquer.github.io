@@ -16,7 +16,7 @@ interface ContactActionsProps {
   tone?: "light" | "dark";
 }
 
-const buildActions = (ui: UiStrings) => [
+const buildActions = (ui: UiStrings, resumeFile: string) => [
   {
     href: `mailto:${profile.email}`,
     icon: <EnvelopeSimpleIcon aria-hidden="true" weight="bold" />,
@@ -36,7 +36,7 @@ const buildActions = (ui: UiStrings) => [
   },
   {
     download: true,
-    href: profile.resumeFile,
+    href: resumeFile,
     icon: <DownloadSimpleIcon aria-hidden="true" weight="bold" />,
     label: ui.contact.resume,
   },
@@ -50,11 +50,11 @@ const actionVariant = (isPrimary: boolean, isDark: boolean) => {
 };
 
 const ContactActions = ({ className, tone = "light" }: ContactActionsProps) => {
-  const { ui } = useLocale();
+  const { pick, ui } = useLocale();
   const isDark = tone === "dark";
   return (
     <div className={cn("flex flex-wrap gap-2", className)}>
-      {buildActions(ui).map((action, index) => (
+      {buildActions(ui, pick(profile.resumeFile)).map((action, index) => (
         <ActionLink
           action={action}
           key={action.href}
