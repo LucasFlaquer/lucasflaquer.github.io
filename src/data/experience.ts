@@ -3,6 +3,7 @@ import { catho } from "@/data/experience/catho.ts";
 import { crb } from "@/data/experience/crb.ts";
 import { grupoPrimo } from "@/data/experience/grupo-primo.ts";
 import { icertus } from "@/data/experience/icertus.ts";
+import { johnsonLawGroup } from "@/data/experience/johnson-law-group.ts";
 import { printly } from "@/data/experience/printly.ts";
 import { steeprock } from "@/data/experience/steeprock.ts";
 import type { Role } from "@/types/content.ts";
@@ -14,6 +15,7 @@ export const rolesByDate: Role[] = [
   catho,
   btg,
   steeprock,
+  johnsonLawGroup,
   printly,
 ];
 

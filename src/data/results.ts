@@ -14,8 +14,8 @@ export const results: Result[] = [
   },
   {
     detail: {
-      en: "Greenfield forestry funds platform for BTG Pactual and Timberland.",
-      pt: "Plataforma greenfield de fundos florestais para o BTG Pactual e a Timberland.",
+      en: "Greenfield forestry funds platform for BTG Pactual and Timberland; fund managers now use it in place of spreadsheets.",
+      pt: "Plataforma greenfield de fundos florestais para o BTG Pactual e a Timberland; os gestores passaram a usá-la no lugar de planilhas.",
     },
     roleSlug: "btg-pactual",
     value: {
@@ -25,13 +25,13 @@ export const results: Result[] = [
   },
   {
     detail: {
-      en: "Across most projects, under a SonarQube quality gate of 88% minimum.",
-      pt: "Na maioria dos projetos, sob um quality gate do SonarQube com mínimo de 88%.",
+      en: "Backend of an AI print-ordering product (RAG chat, SSE streaming) built from scratch, with a pilot print shop.",
+      pt: "Backend de um produto de pedidos de impressão com IA (chat RAG, streaming via SSE) construído do zero, com uma gráfica piloto.",
     },
-    roleSlug: "btg-pactual",
+    roleSlug: "printly",
     value: {
-      en: "Test coverage ~60–75% → ~100%",
-      pt: "Cobertura de testes ~60–75% → ~100%",
+      en: "Zero to live beta in ~6 months",
+      pt: "Do zero a um beta no ar em ~6 meses",
     },
   },
   {
