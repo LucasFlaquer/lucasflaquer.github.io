@@ -1,8 +1,8 @@
 import type { Education, Language, Localized } from "@/types/content.ts";
 
 export const workflow: Localized<string> = {
-  en: "Spec-driven workflow with Claude Code: PRD and ADRs before coding, task generation and refinement, sequential (or parallel) execution, then automated review and QA before opening the PR. In daily use for the last ~3 months.",
-  pt: "Fluxo orientado a especificação com Claude Code: PRD e ADRs antes do código, geração e refinamento de tarefas, execução sequencial (ou paralela) e, por fim, revisão automatizada e QA antes de abrir o PR. Em uso diário nos últimos ~3 meses.",
+  en: "Spec-driven workflow with Claude Code: PRD and ADRs before coding, task generation and refinement, sequential (or parallel) execution, then automated review and QA before opening the PR.",
+  pt: "Fluxo orientado a especificação com Claude Code: PRD e ADRs antes do código, geração e refinamento de tarefas, execução sequencial (ou paralela) e, por fim, revisão automatizada e QA antes de abrir o PR.",
 };
 
 export const teamwork: Localized<string> = {
@@ -21,8 +21,8 @@ export const education: Education[] = [
   },
   {
     degree: {
-      en: "Bachelor's in Systems Analysis and Development",
-      pt: "Graduação em Análise e Desenvolvimento de Sistemas",
+      en: "Technologist Degree in Systems Analysis and Development",
+      pt: "Tecnólogo em Análise e Desenvolvimento de Sistemas",
     },
     period: "2014 – 2017",
     school: "FATEC Sorocaba",
@@ -32,13 +32,13 @@ export const education: Education[] = [
 export const languages: Language[] = [
   {
     level: {
-      en: "Advanced / fluent (Senac certificate)",
-      pt: "Avançado / fluente (certificado Senac)",
+      en: "Full professional proficiency (C1, Senac certificate)",
+      pt: "Proficiência profissional plena (C1, certificado Senac)",
     },
     name: { en: "English", pt: "Inglês" },
   },
   {
-    level: { en: "Native", pt: "Nativo" },
+    level: { en: "Native or bilingual", pt: "Nativo ou bilíngue" },
     name: { en: "Portuguese", pt: "Português" },
   },
 ];

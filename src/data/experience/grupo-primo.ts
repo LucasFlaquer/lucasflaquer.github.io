@@ -7,17 +7,21 @@ export const grupoPrimo: Role = {
     pt: "As plataformas Finclass e Stage nas Smart TVs, além do sistema interno de gestão de conteúdo e usuários.",
   },
   headline: {
-    en: "Ported the Finclass and Stage platforms to Samsung (Tizen) and LG Smart TVs.",
-    pt: "Portei as plataformas Finclass e Stage para Smart TVs Samsung (Tizen) e LG.",
+    en: "Built the Smart TV apps for Finclass and Stage (Samsung Tizen, LG webOS); the LG app was approved for the store.",
+    pt: "Construí os apps de Smart TV da Finclass e da Stage (Samsung Tizen, LG webOS); o app da LG foi aprovado na loja.",
   },
   highlights: {
     en: [
-      "Ported the Finclass and Stage platforms to Samsung (Tizen) and LG Smart TVs with React, Vue.js and TypeScript; worked on the internal content and user management system.",
-      "Helped create a knowledge-sharing guild and mentored developers on Clean Code.",
+      "Built the Smart TV apps for the Finclass and Stage platforms (Samsung Tizen, LG webOS) with React, Vue.js and TypeScript, continuing work started by a senior developer; the LG app was approved for the store.",
+      "Implemented remote-control navigation and accessibility for a no-mouse interface, on TV engines without ES6+ support.",
+      "Built the video registration flow and improved components in the internal content and user management system.",
+      "Helped create a knowledge-sharing guild for the whole tech team and mentored developers on Clean Code.",
     ],
     pt: [
-      "Portei as plataformas Finclass e Stage para Smart TVs Samsung (Tizen) e LG com React, Vue.js e TypeScript; trabalhei no sistema interno de gestão de conteúdo e usuários.",
-      "Ajudei a criar uma guilda de compartilhamento de conhecimento e mentorei desenvolvedores em Clean Code.",
+      "Construí os apps de Smart TV das plataformas Finclass e Stage (Samsung Tizen, LG webOS) com React, Vue.js e TypeScript, dando continuidade a um trabalho iniciado por um desenvolvedor sênior; o app da LG foi aprovado na loja.",
+      "Implementei navegação por controle remoto e acessibilidade para uma interface sem mouse, em engines de TV sem suporte a ES6+.",
+      "Construí o fluxo de cadastro de vídeos e melhorei componentes no sistema interno de gestão de conteúdo e usuários.",
+      "Ajudei a criar uma guilda de compartilhamento de conhecimento para todo o time de tecnologia e mentorei desenvolvedores em Clean Code.",
     ],
   },
   period: { en: "Jan 2022 – Jul 2022", pt: "jan 2022 – jul 2022" },
