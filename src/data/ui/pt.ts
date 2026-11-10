@@ -31,7 +31,7 @@ export const pt: UiStrings = {
   language: { label: "Idioma", switchTo: "Switch to English" },
   line: {
     heading: "A linha até aqui",
-    lead: "Sete cargos desde 2019. Aponte para uma estação para ver um resumo; selecione para ver o cargo completo.",
+    lead: "Todos os cargos desde 2019, em ordem. Aponte para uma estação para ver um resumo; selecione para ver o cargo completo.",
     legendBackend: "Backend",
     legendFrontend: "Frontend",
     legendInterchange: "Cargo full-stack: as duas linhas param",

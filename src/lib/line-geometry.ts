@@ -4,6 +4,11 @@ export type HalfStyle = "none" | "solid" | "planned";
 
 export const STATION_STEP_MS = 110;
 
+const STATION_MIN_WIDTH = "6.5rem";
+
+export const stationColumns = (count: number): string =>
+  `repeat(${count}, minmax(${STATION_MIN_WIDTH}, 1fr))`;
+
 export const HALF_POSITION = {
   end: "max-md:top-1/2 max-md:h-1/2 md:left-1/2 md:w-1/2 max-md:origin-top md:origin-left",
   start:
