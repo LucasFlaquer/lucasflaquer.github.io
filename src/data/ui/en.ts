@@ -31,7 +31,7 @@ export const en: UiStrings = {
   language: { label: "Language", switchTo: "Mudar para português" },
   line: {
     heading: "The line so far",
-    lead: "Seven roles since 2019. Point at a station to preview it, select it to see the full role.",
+    lead: "Every role since 2019, in order. Point at a station to preview it, select it to see the full role.",
     legendBackend: "Backend",
     legendFrontend: "Frontend",
     legendInterchange: "Full-stack role: both lines stop",

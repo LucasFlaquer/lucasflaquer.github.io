@@ -1,5 +1,6 @@
 import LineStation from "@/components/line/line-station.tsx";
 import LineTerminus from "@/components/line/line-terminus.tsx";
+import { stationColumns } from "@/lib/line-geometry.ts";
 import type { HalfStyle } from "@/lib/line-geometry.ts";
 import type { Role } from "@/types/content.ts";
 
@@ -18,7 +19,10 @@ const stationHalves = (
 });
 
 const LineMap = ({ activeSlug, onPreview, roles }: LineMapProps) => (
-  <ol className="flex flex-col md:grid md:grid-cols-8">
+  <ol
+    className="flex flex-col md:grid md:overflow-x-auto"
+    style={{ gridTemplateColumns: stationColumns(roles.length + 1) }}
+  >
     {roles.map((role, index) => (
       <LineStation
         isActive={role.slug === activeSlug}
